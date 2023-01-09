@@ -1,0 +1,1 @@
+/home/void/Documents/git/scripts/updt.sh

@@ -1,0 +1,1 @@
+/home/void/Scripts/apl/bmp.apl

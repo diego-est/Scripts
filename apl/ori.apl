@@ -1,0 +1,1 @@
+/home/void/Scripts/apl/ori.apl

@@ -1,0 +1,1 @@
+/home/void/Scripts/brainfuck/fibonacci.bf
