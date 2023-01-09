@@ -1,1 +1,8 @@
-/home/void/Documents/git/scripts/pkgchk
+#!/usr/bin/env bash
+#Prints packages that are not dependent on any other package
+IFS=$'\n' read -rd '' -a pkgs < <( pacman -Q|cut -d' ' -f1 && printf '\0' )
+
+for i in "${pkgs[@]}"; do
+    pkg_count=$(pactree -r "$i"|wc -l)
+    [ "$pkg_count" = 1 ]&&echo "$i">>pkglist
+done

@@ -1,1 +1,24 @@
-/home/void/Documents/git/scripts/wiki-viewer
+#!/usr/bin/env bash
+# Arch Wiki Docs viewer
+WIKI="/usr/share/doc/arch-wiki/html/en"
+
+html_parse(){ for file in "$WIKI"/*;do
+    echo "$file"
+done|rg -. "\.html"
+}
+IFS=$'\n' read -r -d '' -a var < <( html_parse | rg -i. "$1"&&printf '\0' )
+
+index=1
+[ 0 = ${#var[@]} ]&&echo "Page not found"&&exit 1
+[ 1 = ${#var[@]} ]&&w3m "${var[0]}"&&exit 0
+
+for i in "${var[@]}";do
+    i=$(echo "$i"|awk -F '/' '{print $(NF)}')
+    echo "$index) $i"
+    index=$(( index+1 ))
+done
+
+read -rp "Choose a number: " index
+
+[ "$index" -gt ${#var[@]} ]&&echo "Number out of bounds"&&exit 1
+[[ $index = [1-9]* ]]&&w3m "${var[$index-1]}"||echo "That's not a number"&&exit 1

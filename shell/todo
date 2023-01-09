@@ -1,1 +1,34 @@
-/home/void/Documents/git/scripts/todo
+#!/usr/bin/env bash
+#todo list script
+sprt=")"
+re="\\\e[[0-9]*m"
+[ ! -e list.txt ]&&echo "0$sprt">list.txt
+
+print_(){ echo -e "$(tail -n $(( $(wc -l list.txt|cut -d' ' -f1)-1 )) list.txt)"
+}
+add_(){ echo -e "$(( $(tail -n 1 list.txt|cut -d')' -f1)+1 ))$sprt $*">>list.txt&&print_
+}
+remove_(){ sed -i "/$1$sprt/"d list.txt
+}
+done_(){ [[ $(sed -n "/$1$sprt/p" list.txt) =~ $re ]]&&remove_ "$1"||sed -i "s/$1$sprt[[:print:]]*/\\\e[30m&\\\e[0m/g" list.txt&&print_
+}
+due_(){ [[ "$(cat list.txt)" =~ $re ]]&&sed -i "/$1$sprt/s/$re//g" list.txt;case $prio in
+high)sed -i "s/$1$sprt[[:print:]]*/\\\e[31m&\\\e[0m/g" list.txt&&print_;;
+medium)sed -i "s/$1$sprt[[:print:]]*/\\\e[33m&\\\e[0m/g" list.txt&&print_;;
+low)sed -i "s/$1$sprt[[:print:]]*/\\\e[32m&\\\e[0m/g" list.txt&&print_;;
+none)sed -i "/$1/s/$re//g";;
+*)return;;
+esac
+}
+
+while [ -n "$1" ];do case $1 in
+add)shift;add_ "$@"&&exit 0;;
+remove)shift;remove_ "$@"&&print_&&exit 0;;
+done)shift;done_ "$@"&&exit 0;;
+due)shift;prio="$1";shift;due_ "$1";;
+help)help_&&exit 0;;
+*)break;;
+esac
+done
+
+[ -z "$1" ]&&print_&&exit 0

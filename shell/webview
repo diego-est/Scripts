@@ -1,1 +1,11 @@
-/home/void/Documents/git/scripts/webview
+#!/usr/bin/env bash
+#Determines program to run depending on the URL given
+ext="${1##*.}"
+
+case $ext in
+    mkv | mp4 | gif)nohup mpv "$1" >/dev/null &;;
+    png | jpg | jpeg | jpe)nohup feh "$1" >/dev/null &;;
+    mp3 | flac | opus | mp3?source=feed | pdf)nohup wget "$1" >/dev/null &;;
+    com/watch?v=* | be/* | com/shorts/*)nohup mpv "$1" >/dev/null &;;
+    *)return;;
+esac

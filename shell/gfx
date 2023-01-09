@@ -1,1 +1,37 @@
-/home/void/Scripts/shell/gfx
+#!/usr/bin/sh
+#Turn off/on graphical enhancements
+#dependencies: oneko, lemonbar, picom
+
+gfxOn() {
+    oneko -sakura -position -30 -100 &
+    oneko -tomoyo -position +40 -30 &
+
+    ~/Scripts/shell/WMbuttons-new.sh | sh &
+    ~/Scripts/shell/clock.sh | \
+        lemonbar -pdg "135x50+1842+10" -f "Fira Code Regular"-12 &
+    ~/Scripts/shell/wthr.sh | \
+        lemonbar -pdg "200x50+2000+10" -f "Fira Code Regular"-12 &
+    ~/Scripts/shell/playr.sh | \
+        lemonbar -pdg "800x50+3030+10" -f "Fira Code Regular"-12 &
+
+    picom && exit 0
+}
+
+gfxOff() {
+    pkill lemonbar &
+    pkill oneko &
+    pkill picom && exit 0
+}
+
+while [ -n "$1" ]; do
+    case $1 in
+        on)
+            gfxOn
+            shift
+            ;;
+        off)
+            gfxOff
+            shift
+            ;;
+    esac
+done

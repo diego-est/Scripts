@@ -1,1 +1,4 @@
-/home/void/Scripts/c/cpp/mandelbrot/makefile
+all: main
+
+test: main.cpp
+	g++ main.cpp -Ofast -o mandelbrot

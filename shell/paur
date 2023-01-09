@@ -1,1 +1,5 @@
-/home/void/Documents/git/scripts/paur
+#!/usr/bin/env bash
+#Bash aur helper
+err_(){ echo "errors ocurred";exit 1
+}
+cd "$HOME"/git/AUR/&&git clone https://aur.archlinux.org/"$1".git&&cd "$1"&&makepkg -si||err_

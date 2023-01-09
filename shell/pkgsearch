@@ -1,1 +1,8 @@
-/home/void/Documents/git/scripts/pkgsearch
+#!/usr/bin/env bash
+#Makes a pkg-info.txt file with the repo description of each file
+IFS=$'\n' read -rd '' -a pkgs < <( pacman -Q|cut -d' ' -f1&&printf '\0' )
+
+for i in "${pkgs[@]}";do
+    pkg_info=$(pacman -Ss "$i"|rg "[[:print:]]/$i " -A 1)
+    echo "$pkg_info">>pkg-info.txt
+done

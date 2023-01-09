@@ -1,1 +1,1 @@
-/home/void/Documents/git/scripts/fibonacci-complete.c
+int main(b,a,c){for(a=0;a>=0;){printf("%d\n",a),c=a,a+=b,b=c;}}

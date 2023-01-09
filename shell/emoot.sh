@@ -1,1 +1,3 @@
-/home/void/Scripts/shell/emoot.sh
+#!/bin/sh
+EMOT_DIR
+for i in /stora

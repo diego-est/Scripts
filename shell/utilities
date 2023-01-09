@@ -1,1 +1,387 @@
-/home/void/Documents/git/scripts/utilities
+#!/usr/bin/env bash
+help_text(){ while IFS= read -r line; do
+    printf "%s\n" "$line"
+done <<-EOF
+
+    Usage: cnvrs [CONVERSION FLAG] [BASE UNIT] [CONVERTED UNIT] [VALUE]
+    
+    Short Description
+
+    -h, --help          show this help text
+    -A, --area          Convert between area units
+                        Area units are the following:
+                            ac  -> Acres
+                            a   -> Ares
+                            ha  -> Hectares
+                            cm2 -> Square centimeters
+                            ft2 -> Square feet
+                            in2 -> Square inches
+                            m2  -> Square meters
+
+    -L, --length        Convert between length units
+                        Length units are the following:
+                            mm  -> Millimeters
+                            cm  -> Centimeters
+                            m   -> Meters
+                            km  -> Kilometers
+                            in  -> Inches
+                            ft  -> Feet
+                            yd  -> Yards
+                            mi  -> Miles
+                            nm  -> Nautical miles
+                            mil -> Mils
+
+    -t, --temperature   Convert between temperature units
+                        Temperature units are the following
+                            K -> Kelvin
+                            F -> Degrees Fahrenheit
+                            C -> Degrees Celsius
+
+    -V, --volume
+
+    -M, --mass
+
+    -D, --data
+
+    -S, --speed
+
+    -T, --time
+
+EOF
+}
+
+while [ "$1" != "" ]; do case $1 in
+        -h | --help)help_text;exit 0;;
+        -A | --area)UNITS=AREA;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        -L | --length)UNITS=LENGTH;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        -t | --temperature)UNITS=TEMP;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        -V | --volume)UNITS=VOLUME;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        -M | --mass)UNITS=MASS;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        -D | --data)UNITS=DATA;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        -S | --speed)UNITS=SPEED;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        -T | --time)UNITS=TIME;shift;BASE=$1;shift;CONVERSION=$1;shift;;
+        *)break;;
+    esac
+done
+
+VALUE="$1"
+re="^[+-]?[0-9]+([.][0-9]+)?$"
+ne="^[+-]?[^0-9]+([.][0-9]+)?$"
+[[ "$BASE" =~ $re || -z "$BASE" || "$BASE" = "$CONVERSION" || "$VALUE" =~ $ne ]]&&echo -e "Error: incorrect syntax\n"&&help_text&&exit 1
+
+area_(){ case $BASE in
+ac)case $CONVERSION in
+        a)echo "$VALUE*40.4686"|bc -l;;
+        ha)echo "$VALUE*0.404686"|bc -l;;
+        cm2)echo "$VALUE*40468600"|bc -l;;
+        ft2)echo "$VALUE*43560.04"|bc -l;;
+        in2)echo "$VALUE*627646"|bc -l;;
+        m2)echo "$VALUE*4046.86"|bc -l;;
+        *)return;;
+   esac;;
+a)case $CONVERSION in
+        ac)echo "$VALUE*0.02471052"|bc -l;;
+        ha)echo "$VALUE*0.01"|bc -l;;
+        cm2)echo "$VALUE*1000000"|bc -l;;
+        ft2)echo "$VALUE*1076.391"|bc -l;;
+        in2)echo "$VALUE*155000.3"|bc -l;;
+        m2)echo "$VALUE*100"|bc -l;;
+        *)return;;
+  esac;;
+ha)case $CONVERSION in
+        ac)echo "$VALUE*2.471052"|bc -l;;
+        a)echo "$VALUE*100"|bc -l;;
+        cm2)echo "$VALUE*100000000"|bc -l;;
+        ft2)echo "$VALUE*107639.1"|bc -l;;
+        in2)echo "$VALUE*15500030"|bc -l;;
+        m2)echo "$VALUE*10000"|bc -l;;
+        *)return;;
+   esac;;
+cm2)case $CONVERSION in
+        ac)echo "$VALUE*0.00000002471052"|bc -l;;
+        a)echo "$VALUE*0.000001"|bc -l;;
+        ha)echo "$VALUE*0.00000001"|bc -l;;
+        ft2)echo "$VALUE*0.001076391"|bc -l;;
+        in2)echo "$VALUE*0.1550003"|bc -l;;
+        m2)echo "$VALUE*0.0001"|bc -l;;
+        *)return;;
+    esac;;
+ft2)case $CONVERSION in
+        ac)echo "$VALUE*0.0002295682"|bc -l;;
+        a)echo "$VALUE*0.0009290304"|bc -l;;
+        ha)echo "$VALUE*0.000009290304"|bc -l;;
+        cm2)echo "$VALUE*929.0304"|bc -l;;
+        in2)echo "$VALUE*144"|bc -l;;
+        m2)echo "$VALUE*0.09290304"|bc -l;;
+        *)return;;
+    esac;;
+in2)case $CONVERSION in
+        ac)echo "$VALUE*0.0000001594224"|bc -l;;
+        a)echo "$VALUE*0.0000064516"|bc -l;;
+        ha)echo "$VALUE*0.000000064516"|bc -l;;
+        cm2)echo "$VALUE*6.4516"|bc -l;;
+        ft2)echo "$VALUE*0.006944444"|bc -l;;
+        m2)echo "$VALUE*0.00064516"|bc -l;;
+        *)return;;
+    esac;;
+m2)case $CONVERSION in
+        ac)echo "$VALUE*0.0002471052"|bc -l;;
+        a)echo "$VALUE*0.01"|bc -l;;
+        ha)echo "$VALUE*0.0001"|bc -l;;
+        cm2)echo "$VALUE*10000"|bc -l;;
+        ft2)echo "$VALUE*10.76391"|bc -l;;
+        in2)echo "$VALUE*1550.003"|bc -l;;
+        *)return;;
+   esac;;
+*)return;;
+esac
+}
+
+length_(){ case $BASE in
+mm)case $CONVERSION in
+        cm)echo "$VALUE*0.1"|bc -l;;
+        m)echo "$VALUE*0.001"|bc -l;;
+        km)echo "$VALUE*0.000001"|bc -l;;
+        in)echo "$VALUE*0.03937008"|bc -l;;
+        ft)echo "$VALUE*0.00328084"|bc -l;;
+        yd)echo "$VALUE*0.001093613"|bc -l;;
+        mi)echo "$VALUE*0.0000006213712"|bc -l;;
+        nm)echo "$VALUE*0.0000005399565"|bc -l;;
+        mil)echo "$VALUE*39.37008"|bc -l;;
+        *)return;;
+   esac;;
+cm)case $CONVERSION in
+        mm)echo "$VALUE*10"|bc -l;;
+        m)echo "$VALUE*0.01"|bc -l;;
+        km)echo "$VALUE*0.00001"|bc -l;;
+        in)echo "$VALUE*0.3937008"|bc -l;;
+        ft)echo "$VALUE*0.0328084"|bc -l;;
+        yd)echo "$VALUE*0.01093613"|bc -l;;
+        mi)echo "$VALUE*0.000006213712"|bc -l;;
+        nm)echo "$VALUE*0.000005399565"|bc -l;;
+        mil)echo "$VALUE*393.7008"|bc -l;;
+        *)return;;
+   esac;;
+m)case $CONVERSION in
+        mm)echo "$VALUE*1000"|bc -l;;
+        cm)echo "$VALUE*100"|bc -l;;
+        km)echo "$VALUE*0.001"|bc -l;;
+        in)echo "$VALUE*39.37008"|bc -l;;
+        ft)echo "$VALUE*3.28084"|bc -l;;
+        yd)echo "$VALUE*1.093613"|bc -l;;
+        mi)echo "$VALUE*0.0006213712"|bc -l;;
+        nm)echo "$VALUE*0.0005399565"|bc -l;;
+        mil)echo "$VALUE*39370.08"|bc -l;;
+        *)return;;
+  esac;;
+km)case $CONVERSION in
+        mm)echo "$VALUE*1000000"|bc -l;;
+        cm)echo "$VALUE*100000"|bc -l;;
+        m)echo "$VALUE*1000"|bc -l;;
+        in)echo "$VALUE*39370.08"|bc -l;;
+        ft)echo "$VALUE*3280.084"|bc -l;;
+        yd)echo "$VALUE*1093.613"|bc -l;;
+        mi)echo "$VALUE*0.6213712"|bc -l;;
+        nm)echo "$VALUE*0.5399565"|bc -l;;
+        mil)echo "$VALUE*39370080"|bc -l;;
+        *)return;;
+   esac;;
+in)case $CONVERSION in
+        mm)echo "$VALUE*25.4"|bc -l;;
+        cm)echo "$VALUE*2.54"|bc -l;;
+        m)echo "$VALUE*0.0254"|bc -l;;
+        km)echo "$VALUE*0.0000254"|bc -l;;
+        ft)echo "$VALUE*0.08333333"|bc -l;;
+        yd)echo "$VALUE*0.02777778"|bc -l;;
+        mi)echo "$VALUE*0.00001578283"|bc -l;;
+        nm)echo "$VALUE*0.0000137149"|bc -l;;
+        mil)echo "$VALUE*1000"|bc -l;;
+        *)return;;
+   esac;;
+ft)case $CONVERSION in
+        mm)echo "$VALUE*304.8"|bc -l;;
+        cm)echo "$VALUE*30.48"|bc -l;;
+        m)echo "$VALUE*0.3048"|bc -l;;
+        km)echo "$VALUE*0.0003048"|bc -l;;
+        in)echo "$VALUE*12"|bc -l;;
+        yd)echo "$VALUE*0.3333333"|bc -l;;
+        mi)echo "$VALUE*0.0001893939"|bc -l;;
+        nm)echo "$VALUE*0.0001645788"|bc -l;;
+        mil)echo "$VALUE*12000"|bc -l;;
+        *)return;;
+   esac;;
+yd)case $CONVERSION in
+        mm)echo "$VALUE*914.4"|bc -l;;
+        cm)echo "$VALUE*91.44"|bc -l;;
+        m)echo "$VALUE*0.9144"|bc -l;;
+        km)echo "$VALUE*0.0009144"|bc -l;;
+        in)echo "$VALUE*36"|bc -l;;
+        ft)echo "$VALUE*3"|bc -l;;
+        mi)echo "$VALUE*0.0005681818"|bc -l;;
+        nm)echo "$VALUE*0.0004937363"|bc -l;;
+        mil)echo "$VALUE*36000"|bc -l;;
+        *)return;;
+   esac;;
+mi)case $CONVERSION in
+        mm)echo "$VALUE*1609344"|bc -l;;
+        cm)echo "$VALUE*160934.4"|bc -l;;
+        m)echo "$VALUE*1609.344"|bc -l;;
+        km)echo "$VALUE*1.609344"|bc -l;;
+        in)echo "$VALUE*63360"|bc -l;;
+        ft)echo "$VALUE*5280"|bc -l;;
+        yd)echo "$VALUE*1760"|bc -l;;
+        nm)echo "$VALUE*0.8689758"|bc -l;;
+        mil)echo "$VALUE*63360000"|bc -l;;
+        *)return;;
+   esac;;
+nm)case $CONVERSION in
+        mm)echo "$VALUE*1852001"|bc -l;;
+        cm)echo "$VALUE*185200.1"|bc -l;;
+        m)echo "$VALUE*1852.001"|bc -l;;
+        km)echo "$VALUE*1.852001"|bc -l;;
+        in)echo "$VALUE*72913.42"|bc -l;;
+        ft)echo "$VALUE*6076.118"|bc -l;;
+        yd)echo "$VALUE*2025.373"|bc -l;;
+        mi)echo "$VALUE*1.15078"|bc -l;;
+        mil)echo "$VALUE*72913420"|bc -l;;
+        *)return;;
+   esac;;
+mil)case $CONVERSION in
+        mm)echo "$VALUE*0.0254"|bc -l;;
+        cm)echo "$VALUE*0.00254"|bc -l;;
+        m)echo "$VALUE*0.0000254"|bc -l;;
+        km)echo "$VALUE*0.0000000254"|bc -l;;
+        in)echo "$VALUE*0.001"|bc -l;;
+        ft)echo "$VALUE*0.00008333333"|bc -l;;
+        yd)echo "$VALUE*0.00002777778"|bc -l;;
+        mi)echo "$VALUE*0.00000001578283"|bc -l;;
+        nm)echo "$VALUE*0.0000000137149"|bc -l;;
+        *)return;;
+    esac;;
+*)return;;
+esac
+}
+
+temp_(){ case $BASE in
+K)case $CONVERSION in
+        F)echo "($VALUE-273.15)*1.8+32"|bc -l;;
+        C)echo "$VALUE-273.15"|bc -l;;
+        *)return;;
+  esac;;
+F)case $CONVERSION in
+        K)echo "($VALUE-32)*5/9+273.15"|bc -l;;
+        C)echo "($VALUE-32)*5/9"|bc -l;;
+        *)return;;
+  esac;;
+C)case $CONVERSION in
+        K)echo "$VALUE+273.15"|bc -l;;
+        F)echo "$VALUE*1.8+32"|bc -l;;
+        *)return;;
+  esac;;
+*)return;;
+esac
+}
+
+volume_(){ case $BASE in
+example)case $CONVERSION in
+        example)echo "$VALUE*"|bc -l;;
+        *)return;;
+        esac;;
+*)return;;
+esac
+}
+
+mass_(){ case $BASE in
+example)case $CONVERSION in
+        example)echo "$VALUE*"|bc -l;;
+        *)return;;
+        esac;;
+*)return;;
+esac
+}
+
+data_(){ case $BASE in
+example)case $CONVERSION in
+        example)echo "$VALUE*"|bc -l;;
+        *)return;;
+        esac;;
+*)return;;
+esac
+}
+
+speed_ () { case $BASE in
+example)case $CONVERSION in
+        example)echo "$VALUE*"|bc -l;;
+        *)return;;
+        esac;;
+*)return;;
+esac
+}
+
+time_ () { case $BASE in
+example)case $CONVERSION in
+        example)echo "$VALUE*"|bc -l;;
+        *)return;;
+        esac;;
+*)return;;
+esac
+}
+
+case $UNITS in
+    AREA)area_;;
+    LENGTH)length_;;
+    TEMP)temp_;;
+    VOLUME)volume_;;
+    MASS)mass_;;
+    DATA)data_;;
+    SPEED)speed_;;
+    TIME)time_;;
+    *)return;;
+esac
+  
+#Volume
+#   UK gallons (gal)
+#   US gallons (gal)
+#   Liters (l)
+#   Milliliters (ml)
+#   Cubic centimeters (cc) (cm^3)
+#   Cubic inches (in^3)
+#   Cubic feet (ft^3)
+
+#Mass
+#   Tons (t)
+#   UK tons (t)
+#   US tons (t)
+#   Pounds (lb)
+#   Ounces (oz)
+#   Kilograms (kg)
+#   Grams (g)
+
+#Data
+#   Bits (bit)
+#   Bytes (B)
+#   Kilobytes (KB)
+#   Megabytes (MB)
+#   Gigabytes (GB)
+#   Terabytes (TB)
+
+#Speed
+#   Meters per second (m/s)
+#   Meters per hour (m/h)
+#   Kilometers per second (km/s)
+#   Kilometers per hour (km/h)
+#   Inches per second (in/s)
+#   Inches per hour (in/h)
+#   Feet per second (ft/s)
+#   Feet per hour (ft/h)
+#   Miles per second (mi/s)
+#   Miles per hour (mi/h)
+#   Knots (kn)
+
+#Time
+#   Milliseconds (ms)
+#   Seconds (s)
+#   Minutes (min)
+#   Hours (h)
+#   Days (d)
+#   Weeks (wk)
