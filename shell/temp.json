@@ -1,0 +1,537 @@
+{
+  "title": "OST List",
+  "ost": [
+    {
+      "name": "A Shape of Light \"A Silent Voice the Movie\" Original Soundtrack",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 61
+    },
+    {
+      "name": "Ace Attorney OST (1-6)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 242
+    },
+    {
+      "name": "Ace Attorney: Miles Edgeworth Investigations",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 92
+    },
+    {
+      "name": "Akuyaku Reijou nanode Last Boss wo Kattemimashita (悪役令嬢なのでラスボスを飼ってみました)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 2
+    },
+    {
+      "name": "Arcaea Sound Collection (Memories of Memories)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 42,
+      "songs": 223
+    },
+    {
+      "name": "Arknights OST.",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 220
+    },
+    {
+      "name": "Best Whiplash O.S.T.",
+      "status": "completed",
+      "score": "S",
+      "progress": 12,
+      "songs": 12
+    },
+    {
+      "name": "Bleach OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 71
+    },
+    {
+      "name": "Burnout Paradise Remastered",
+      "status": "completed",
+      "score": "SS",
+      "progress": 33,
+      "songs": 33
+    },
+    {
+      "name": "Castle Crashers",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 11
+    },
+    {
+      "name": "Celeste OST - Including B-Sides and Farewell",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 12,
+      "songs": 43
+    },
+    {
+      "name": "Chainsaw Man Soundtrack EP Vol.1",
+      "status": "completed",
+      "score": "S",
+      "progress": 29,
+      "songs": 29
+    },
+    {
+      "name": "Chainsawman OP & ED",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 13
+    },
+    {
+      "name": "Counter:Side",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 75
+    },
+    {
+      "name": "Cyberpunk OST",
+      "status": "listening",
+      "score": "n/a",
+      "progress": 10,
+      "songs": 39
+    },
+    {
+      "name": "Dagashi Kashi Original Soundtrack",
+      "status": "listening",
+      "score": "n/a",
+      "progress": 28,
+      "songs": 48
+    },
+    {
+      "name": "DMC5 OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 12
+    },
+    {
+      "name": "Destiny 1 and 2 Full OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 275
+    },
+    {
+      "name": "DEVILMAN crybaby (Original Soundtrack)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 48
+    },
+    {
+      "name": "Doom (Original Game Soundtrack)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 2,
+      "songs": 31
+    },
+    {
+      "name": "Dragons Dogma Dark Arisen",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 67
+    },
+    {
+      "name": "Final Fantasy 15 OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 223
+    },
+    {
+      "name": "FLCL| openings, endings & OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 50
+    },
+    {
+      "name": "GUILTY GEAR OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 143
+    },
+    {
+      "name": "Genshin Impact OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 592
+    },
+    {
+      "name": "Girls' Frontline / OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 90
+    },
+    {
+      "name": "Godzilla OST (1998)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 11
+    },
+    {
+      "name": "Godzilla vs. Mechagodzilla Original Soundtrack",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 35
+    },
+    {
+      "name": "Gran Turismo 4 - GT Mode 1/GT Menu OST 1",
+      "status": "completed",
+      "score": "A",
+      "progress": 1,
+      "songs": 1
+    },
+    {
+      "name": "Haibane Renmei",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 34
+    },
+    {
+      "name": "Halo OST 1-3, ODST, Reach and Wars - The Bungie Games",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 226
+    },
+    {
+      "name": "Higurashi no Naku Koro ni | openings, endings & OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 130
+    },
+    {
+      "name": "Houseki no Kuni OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 48
+    },
+    {
+      "name": "Jin-Roh: Wolf Brigade (Soundscapes)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 11
+    },
+    {
+      "name": "Horimiya (Openings & Endings): All Songs 2022",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 10
+    },
+    {
+      "name": "JoJo OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 24,
+      "songs": 48
+    },
+    {
+      "name": "Lord of the Rings OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 110
+    },
+    {
+      "name": "METAL GEAR RISING REVENGEANCE Vocal Tracks Selection",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 27
+    },
+    {
+      "name": "Made In Abyss OST 1-3",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 114
+    },
+    {
+      "name": "Morrowind OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 95
+    },
+    {
+      "name": "Neural Cloud OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 52
+    },
+    {
+      "name": "NHK ni Youkoso! (Welcome to the N.H.K.) Soundtrack",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 52
+    },
+    {
+      "name": "NieR OST",
+      "status": "listening",
+      "score": "n/a",
+      "progress": 12,
+      "songs": 143
+    },
+    {
+      "name": "nichijou op 1 & 2 and ed 1",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 3
+    },
+    {
+      "name": "OST - W40K Mechanicus",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 12
+    },
+    {
+      "name": "Okami OST (Full)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 228
+    },
+    {
+      "name": "Ori and the Blind Forest and Will of the Wisps",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 92
+    },
+    {
+      "name": "Outer Wilds - Full OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 58
+    },
+    {
+      "name": "PERSONA5 ORIGINAL SOUNDTRACK",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 110
+    },
+    {
+      "name": "Pan's Labyrinth (Original Motion Picture Soundtrack)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 21
+    },
+    {
+      "name": "Paripi Koumei ALL OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 14
+    },
+    {
+      "name": "Pay day 2 soundtrack ",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 41
+    },
+    {
+      "name": "Persona 4 Golden OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 194
+    },
+    {
+      "name": "Ping Pong (Original Soundtrack)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 42
+    },
+    {
+      "name": "Plants Vs. Zombies (Original Video Game Soundtrack)",
+      "status": "listening",
+      "score": "n/a",
+      "progress": 5,
+      "songs": 29
+    },
+    {
+      "name": "Plastic memories",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 8
+    },
+    {
+      "name": "Pokemon Black & White OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 199
+    },
+    {
+      "name": "Pokemon DPPt Soundtrack",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 249
+    },
+    {
+      "name": "Pokémon HeartGold/SoulSilver Soundtrack!",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 69
+    },
+    {
+      "name": "Serial Experiments Lain Soundtrack",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 84
+    },
+    {
+      "name": "Shoujo Shuumatsu Ryoukou ( Girls Last Tour )",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 4
+    },
+    {
+      "name": "Skullgirls: The Complete Soundtrack",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 43
+    },
+    {
+      "name": "Star Wars Soundtracks",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 679
+    },
+    {
+      "name": "Star Wars: Visions - The Village Bride (Original Soundtrack)",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 10
+    },
+    {
+      "name": "Sonic Frontiers Original Soundtrack Stillness & Motion",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 150
+    },
+    {
+      "name": "Sora no Woto",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 2
+    },
+    {
+      "name": "Space Dandy | openings, endings & OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 67
+    },
+    {
+      "name": "Summer Time Rendering",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 4
+    },
+    {
+      "name": "Super Mario Galaxy Soundtrack",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 33
+    },
+    {
+      "name": "subnautica OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 55
+    },
+    {
+      "name": "ULTRAKILL OST",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 19
+    },
+    {
+      "name": "Undertale OST",
+      "status": "listening",
+      "score": "n/a",
+      "progress": 29,
+      "songs": 48
+    },
+    {
+      "name": "Vivy -Fluorite Eye's Song-",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 57
+    },
+    {
+      "name": "Yofukashi no uta Op & Ed",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 3
+    },
+    {
+      "name": "Zelda: Breath of the Wild Soundtrack Playlist",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 168
+    },
+    {
+      "name": "結束バンド",
+      "status": "planning",
+      "score": "n/a",
+      "progress": 0,
+      "songs": 14
+    }
+  ]
+}
