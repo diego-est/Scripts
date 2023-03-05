@@ -1,2 +1,2 @@
 all:
-	g++ -W -Wall -Werror -Ofast -fopenmp main.cpp
+	g++ -W -Wall -Werror -Ofast main.cpp
