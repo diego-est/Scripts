@@ -1,0 +1,28 @@
+solution = {}
+nums = {}
+rb = *nums[0] (NULL)
+k = 0
+
+1:
+solution = {}
+nums = {1}
+rb = *nums[0] (1)
+k = 0
+
+2:
+solution = {1}
+nums = {1,}
+rb = *nums[1] (2)
+k = 0
+
+prev:
+solution = {1, 2}
+nums = {1, 2}
+rb = *nums[1] (2)
+k = 1
+
+prev:
+solution = {1, 2}
+nums = {1, 2}
+rb = *nums[1] (2)
+k = 1

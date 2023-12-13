@@ -1,0 +1,21 @@
+qcl
+
+qufunct const1(quconst x, quscratch y)
+{
+	X(y);
+}
+
+qufunct identity(qureg x, quscratch y)
+{
+	CNot(x, y);
+}
+
+qufunct negation(qureg x, quscratch y)
+{
+	CNot(x, y);
+	X(y);
+}
+
+qufunct const0(quconst x, quscratch y)
+{
+}

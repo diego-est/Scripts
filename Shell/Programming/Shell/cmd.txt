@@ -1,0 +1,12 @@
+Apps
+	firefox-nightly
+	gimp
+	inkscape
+Terms
+	wezterm
+	alacritty
+	st
+Power
+	systemctl suspend
+	systemctl poweroff
+	reboot
